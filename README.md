@@ -11,7 +11,7 @@ The project consists of three phases:
 In this repo, there are:
   ------
  
-- Project_Requirements.pdf: a detailed description of this project, including what I thought, what I did and what I learnt.
+- proj_Intro.pdf: a detailed description / requirements of this project, including what I thought, what I did and what I learnt.
 
   ------
   (Phase 1 - design)
