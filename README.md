@@ -3,6 +3,8 @@ This is a database application helps to manage the Midwifery services (in a simp
 
 In this repo:
 
+- an Entity-Relationship Model, which is an pictorially description of the data, illustrating Key/Participation Constraints, ISA hierarchies, Weak Entities etc.
+
 
 
 
