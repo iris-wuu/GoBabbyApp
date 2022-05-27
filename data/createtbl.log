@@ -1,0 +1,78 @@
+(c) Copyright IBM Corporation 1993,2007
+Command Line Processor for DB2 Client 11.5.4.0
+
+You can issue database manager commands and SQL statements from the command 
+prompt. For example:
+    db2 => connect to sample
+    db2 => bind sample.bnd
+
+For general help, type: ?.
+For command help, type: ? command, where command can be
+the first few keywords of a database manager command. For example:
+ ? CATALOG DATABASE for help on the CATALOG DATABASE command
+ ? CATALOG          for help on all of the CATALOG commands.
+
+To exit db2 interactive mode, type QUIT at the command prompt. Outside 
+interactive mode, all commands must be prefixed with 'db2'.
+To list the current command option settings, type LIST COMMAND OPTIONS.
+
+For more detailed help, refer to the Online Reference Manual.
+
+db2 => db2 => db2 => db2 => db2 => CONNECT TO cs421
+
+   Database Connection Information
+
+ Database server        = DB2/LINUXX8664 11.5.4.0
+ SQL authorization ID   = XWU70
+ Local database alias   = CS421
+
+
+db2 => db2 => db2 => db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE MYTEST01 ( id INTEGER NOT NULL ,value INTEGER ,PRIMARY KEY(id) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Institution ( instid VARCHAR(10) NOT NULL, instname VARCHAR(30) NOT NULL UNIQUE, instaddr VARCHAR(50) NOT NULL, instphonenum VARCHAR(30) NOT NULL, instemail VARCHAR(30) NOT NULL UNIQUE, instwebsite VARCHAR(50), PRIMARY KEY (instid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Midwife ( practitionerid VARCHAR(10) NOT NULL, mwfname VARCHAR(30) NOT NULL UNIQUE, mwfemail VARCHAR(30) NOT NULL UNIQUE, mwfphonenum VARCHAR(30) NOT NULL, instid VARCHAR(10) NOT NULL, PRIMARY KEY (practitionerid), FOREIGN KEY (instid) REFERENCES Institution (instid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Mother ( mcardid VARCHAR(10) NOT NULL, expbirthframe VARCHAR(20) NOT NULL, mname VARCHAR(30) NOT NULL, mbirth DATE NOT NULL, maddr VARCHAR(50) NOT NULL, mphonenum VARCHAR(30) NOT NULL, memail VARCHAR(30) NOT NULL UNIQUE, mprof VARCHAR(50) NOT NULL, mblood VARCHAR(10), PRIMARY KEY (mcardid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Father ( fatherid VARCHAR(10) NOT NULL, fname VARCHAR(30) NOT NULL, fbirth DATE NOT NULL, fphonenum VARCHAR(30) NOT NULL, fprof VARCHAR(30) NOT NULL, fcardid VARCHAR(10), faddr VARCHAR(50), femail VARCHAR(30), fblood VARCHAR(10), PRIMARY KEY (fatherid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE RegParent ( parentid VARCHAR(10) NOT NULL, mcardid VARCHAR(10) NOT NULL, fatherid VARCHAR(10), PRIMARY KEY (parentid), FOREIGN KEY (mcardid) REFERENCES Mother (mcardid), FOREIGN KEY (fatherid) REFERENCES Father (fatherid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Pregnancy ( pregid VARCHAR(10) NOT NULL, interested BOOLEAN NOT NULL, pregnumtime INT NOT NULL, parentid VARCHAR(10) NOT NULL, instid VARCHAR(10) NOT NULL, primary_pracid VARCHAR(10) NOT NULL, backup_pracid VARCHAR(10), fir_duedate DATE, sec_duedate DATE, final_duedate DATE, birthlocation VARCHAR(50), babynum INT, PRIMARY KEY (pregid), FOREIGN KEY (parentid) REFERENCES RegParent (parentid), FOREIGN KEY (instid) REFERENCES Institution (instid), FOREIGN KEY (primary_pracid) REFERENCES Midwife (practitionerid), FOREIGN KEY (backup_pracid) REFERENCES Midwife (practitionerid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Appointment ( apptid VARCHAR(10) NOT NULL, apptdate DATE NOT NULL, appttime TIME NOT NULL, practitionerid VARCHAR(10) NOT NULL, pregid VARCHAR(10) NOT NULL, PRIMARY KEY (apptid), FOREIGN KEY (practitionerid) REFERENCES Midwife (practitionerid), FOREIGN KEY (pregid) REFERENCES Pregnancy (pregid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Technician ( techid VARCHAR(10) NOT NULL, techname VARCHAR(30) NOT NULL, techphonenum VARCHAR(30) NOT NULL, PRIMARY KEY (techid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE MedActions ( testid VARCHAR(10) NOT NULL, apptid VARCHAR(10) NOT NULL, testtype VARCHAR(30) NOT NULL, prescrdate DATE NOT NULL, sampledate DATE, techid VARCHAR(10), result VARCHAR(30), labdate DATE, PRIMARY KEY (testid), FOREIGN KEY (apptid) REFERENCES Appointment (apptid), FOREIGN KEY (techid) REFERENCES Technician (techid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Clinic ( instid VARCHAR(10) NOT NULL, PRIMARY KEY (instid), FOREIGN KEY (instid) REFERENCES Institution (instid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE BirthCenter ( instid VARCHAR(10) NOT NULL, PRIMARY KEY (instid), FOREIGN KEY (instid) REFERENCES Institution (instid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Baby ( babyid VARCHAR(10) NOT NULL, pregid VARCHAR(10) NOT NULL, babygender VARCHAR(10), babybdate DATE, babybtime TIME, babyname VARCHAR(30), babyblood VARCHAR(10), PRIMARY KEY (babyid), FOREIGN KEY (pregid) REFERENCES Pregnancy (pregid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE InfoSession ( practitionerid VARCHAR(10) NOT NULL, infodate DATE NOT NULL, infotime TIME NOT NULL, lang VARCHAR(10) NOT NULL, PRIMARY KEY (practitionerid, infodate, infotime), FOREIGN KEY (practitionerid) REFERENCES Midwife (practitionerid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Attend ( parentid VARCHAR(10) NOT NULL, practitionerid VARCHAR(10) NOT NULL, infodate DATE NOT NULL, infotime TIME NOT NULL, attended BOOLEAN NOT NULL, PRIMARY KEY (parentid, practitionerid, infodate, infotime), FOREIGN KEY (parentid) REFERENCES RegParent (parentid), FOREIGN KEY (practitionerid, infodate, infotime) REFERENCES InfoSession (practitionerid, infodate, infotime) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => db2 (cont.) => CREATE TABLE Notes ( apptid VARCHAR(10) NOT NULL, timestmp TIMESTAMP NOT NULL, content VARCHAR(50) NOT NULL, PRIMARY KEY (apptid, timestmp), FOREIGN KEY (apptid) REFERENCES Appointment (apptid) )
+DB20000I  The SQL command completed successfully.
+
+db2 => db2 => db2 => db2 => db2 => 
