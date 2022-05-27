@@ -8,7 +8,7 @@ This is a database application helps to manage the Midwifery services (in a simp
 
 In this repo, there are:
 
-   (Intro)
+  -- (Intro)
 
 - Project_Requirements.pdf: a detailed description of this project, including what I thought, what I did and what I learnt.
 
