@@ -1,5 +1,5 @@
 # GoBabbyApp
-This is a database application helps to manage the Midwifery services (in a simplified real-world context). 
+This is a database application that helps to manage the Midwifery services (in a simplified real-world context). 
 
 
 The project consists of three phases: 
