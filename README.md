@@ -40,4 +40,5 @@ In this repo, there are:
 
 About
 ---
-*This is a class project of COMP 421, McGill University, Winter 2022.*
+*This is an individual project of COMP 421, McGill University, Winter 2022.*
+*All files in this repo are done by myself only.*
