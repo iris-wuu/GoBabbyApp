@@ -20,7 +20,7 @@ In this repo, there are:
   ------ 
   (Phase 2 - create database & run sql queries)
   
-- createtbl.sql / loaddata.sql / droptbl.sql: sql codes of table manipulations in database, as well as data insertions.
+- createtbl.sql / loaddata.sql / droptbl.sql: manipulate tables as well as insert data in database.
 
 - createtbl.log / loaddata.log / droptbl.log: showing successful execution of corresponding .sql files.
 
