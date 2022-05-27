@@ -38,5 +38,6 @@ In this repo, there are:
 
 
 
-
-*(This is a course project of COMP421)
+About
+---
+*This is a class project of COMP 421, McGill University, Winter 2022.
