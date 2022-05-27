@@ -24,7 +24,7 @@ In this repo, there are:
 
 - createtbl.log / loaddata.log / droptbl.log: showing successful execution of corresponding .sql files.
 
-- sql_queries: a series of sql queries to retrieve various data.
+- sql_queries.pdf: a series of sql queries to retrieve various data.
 
 
   ------ 
