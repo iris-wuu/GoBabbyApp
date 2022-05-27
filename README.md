@@ -12,7 +12,7 @@ In this repo, there are:
 
 - ER_model.jpeg: an Entity-Relationship Model, which is an pictorially description of the data, illustrating the relationship between different entities, including Key/Participation Constraints, ISA hierarchies, Weak Entities, ternary relationship etc.
 
-- Assum_Restr.pdf: several points of Assumptions and Restrictions that I made/found during the process
+- Assum_Restr.pdf: several points of Assumptions and Restrictions that I made/found during the process, as well as a Relational Translation of the ER model.
 
 - GoBabbyApp.java: java code of this application
 
