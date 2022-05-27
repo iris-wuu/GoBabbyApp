@@ -41,4 +41,5 @@ In this repo, there are:
 About
 ---
 *This is an individual project of COMP 421, McGill University, Winter 2022.*
-*All files in this repo are done by myself only.*
+
+*All files in this repo are done by myself (Xinyuan Wu) only.*
