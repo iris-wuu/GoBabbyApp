@@ -3,11 +3,11 @@ This is a database application helps to manage the Midwifery services (in a simp
 
 In this repo, there is:
 
-- an Entity-Relationship Model, which is an pictorially description of the data, illustrating the relationship between different entities, including Key/Participation Constraints, ISA hierarchies, Weak Entities, ternary relationship etc.
+- ER_model.jpeg: an Entity-Relationship Model, which is an pictorially description of the data, illustrating the relationship between different entities, including Key/Participation Constraints, ISA hierarchies, Weak Entities, ternary relationship etc.
 
-- a pdf of Assumptions and Restrictions (assum_restr.pdf): 
+- Assum_Restr.pdf: a pdf of Assumptions and Restrictions
 
-- a java file (GoBabbyApp.java): the java code of this application
+- GoBabbyApp.java: java code of this application
 
 
 
