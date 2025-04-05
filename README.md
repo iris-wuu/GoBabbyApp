@@ -8,7 +8,7 @@ The project consists of three phases:
 3. develop application programs and implement User Interface
 
 
-In this repo, there are:
+Files in this repo:
   ------
  
 - Proj_Intro.pdf: a detailed description / requirements of this project, including the techniques I used.
